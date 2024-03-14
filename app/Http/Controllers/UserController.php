@@ -10,14 +10,14 @@ class UserController extends Controller
 {
     public function index()
     {
-        $data = [
+        // $data = [
             
-            'level_id' => 2,
-            'username' => 'manager_tiga',
-            'nama' => 'Manager 3',
-            'password' => Hash::make('12345')
-        ];
-        UserModel::create($data);
+        //     'level_id' => 2,
+        //     'username' => 'manager_tiga',
+        //     'nama' => 'Manager 3',
+        //     'password' => Hash::make('12345')
+        // ];
+        // UserModel::create($data);
 
         // tambah data user dengan Eloquent Model
         // $data = [
@@ -33,8 +33,7 @@ class UserController extends Controller
         // ];
         // UserModel::insert($data); // tambahkan data ke tabel m_user
 
-        
-        $user = UserModel::all(); 
-        return view('user', ['data' => $user]);
+        $user = UserModel::find(1); 
+        return view('user',  ['data' => $user]);
     }
 }
