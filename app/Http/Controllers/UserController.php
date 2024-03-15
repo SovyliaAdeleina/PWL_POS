@@ -64,12 +64,42 @@ class UserController extends Controller
         // dd($user);
         // return view('user',  ['data' => $user]);
 
-        $user = UserModel::firstOrCreate(
+        // $user = UserModel::firstOrCreate(
+        //     [
+        //         'username' => 'manager',
+        //         'nama' => 'Manager',
+        //     ]
+        // );
+        // return view('user',  ['data' => $user]);
+
+        // $user = UserModel::firstOrCreate(
+        //     [
+        //         'username' => 'manager22',
+        //         'nama' => 'Manager Dua Dua',
+        //         'password' => Hash::make('12345'),
+        //         'level_id' => 2
+        //     ],
+        // );
+        // return view('user',  ['data' => $user]);
+
+        // $user = UserModel::firstOrNew(
+        //     [
+        //         'username' => 'manager',
+        //         'nama' => 'Manager',
+        //     ],
+        // );
+        // return view('user',  ['data' => $user]);
+
+        $user = UserModel::firstOrNew(
             [
-                'username' => 'manager',
-                'nama' => 'Manager',
-            ]
+                'username' => 'manager33',
+                'nama' => 'Manager Tiga Tiga',
+                'password' => Hash::make('12345'),
+                'level_id' => 2
+            ],
         );
+        $user->save();
+        
         return view('user',  ['data' => $user]);
     }
 }
