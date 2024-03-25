@@ -20,6 +20,7 @@ class KategoriDataTable extends DataTable
  public function dataTable(QueryBuilder $query): EloquentDataTable
  {
  return (new EloquentDataTable($query))
+ 
 /* ->addColumn('action', 'kategori.action') */
  ->setRowId('id');
  }

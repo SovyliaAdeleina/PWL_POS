@@ -34,11 +34,22 @@ class KategoriController extends Controller
         return view('kategori.create');
     }
 
+    public function ubah()
+    {
+        return view('kategori.ubah');
+    }
+
     public function store(Request $request)
     {
         KategoriModel::create([
             'kategori_kode' => $request->kodeKategori,
             'kategori_nama' => $request->namaKategori,
+        ]);
+
+        KategoriModel::ubah([
+            'kategori_kode' => $request->kodeKategori,
+            'kategori_nama' => $request->namaKategori,
+            'kategori_id' => $request->IDKategori,
         ]);
         return redirect('/kategori');
     }
