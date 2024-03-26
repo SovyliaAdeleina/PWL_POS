@@ -10,7 +10,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header">Manage Kategori</div>
-            <a href="kategori/ubah" class=""><center>Tambah Kategori</center></a> 
+            <a href="kategori/create" class=""><center>Tambah Kategori</center></a> 
             <div> <a href={{route('/kategori/ubah',$d->kategori_id)}}>Ubah</a>
             <div class="card-body">
                 {{ $dataTable->table() }}
