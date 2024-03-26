@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.app')
 <!-- Customize sections -->
 @section('subtitle', 'Kategori')
 @section('content_header_title', 'Kategori')
@@ -30,4 +30,29 @@
         </form >
     </div >
 </div >
+
+{{-- @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+
+            @endforeach
+
+        </ul>
+
+    </div>
+@endif --}}
+
+<label for="kategori_kode">Kode Kategori</label>
+
+<input id="kategori_kode"
+type="text"
+name="kategori_kode"
+class="@error('kategori_kode') is-invalid @enderror">
+
+@error('kategori_kode')
+<div class="alert alert-danger">{{ $message }}</div>
+@enderror
+                
 @endsection
