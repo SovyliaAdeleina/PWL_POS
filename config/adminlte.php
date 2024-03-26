@@ -304,7 +304,7 @@ return [
             'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
-        // praktikum 5, soal 1
+        // praktikum 5, soal 2
         [
             'type' => 'Manage Kategori',
             'text' => 'Kategori',
