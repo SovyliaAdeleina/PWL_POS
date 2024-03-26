@@ -304,6 +304,16 @@ return [
             'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
+        // praktikum 5, soal 1
+        [
+            'type' => 'Manage Kategori',
+            'text' => 'Kategori',
+            'topnav_right' => true,
+        ],
+        [
+            'type' => 'fullscreen-widget',
+            'topnav_right' => true,
+        ],
 
         // Sidebar items:
         [
@@ -321,6 +331,12 @@ return [
             'icon' => 'far fa-fw fa-file',
             'label' => 4,
             'label_color' => 'success',
+        ],
+        ['header' => 'MANAGE KATEGORI'],
+        [
+            'text' => 'Kategori',
+            'url' => 'admin/settings',
+            'icon' => 'fas fa-fw fa-three line',
         ],
         ['header' => 'account_settings'],
         [
