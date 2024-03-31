@@ -4,7 +4,8 @@ use App\Http\Controller\KategoriController;
 use App\Http\Controllers\KategoriController as ControllersKategoriController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\POSController;
-use App\Http\Controllers\UserController; 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,3 +25,6 @@ Route::get('/kategori/create', [ControllersKategoriController::class, 'create'])
 Route::get('/kategori/ubah{id}', [ControllersKategoriController::class, 'ubah']);
 Route::post('/kategori', [ControllersKategoriController::class, 'store']);
 Route::resource('m_user', POSController::class);
+
+// Praktikum 2, Jobsheet 7 //
+Route::get('/', [WelcomeController::class, 'index']);
