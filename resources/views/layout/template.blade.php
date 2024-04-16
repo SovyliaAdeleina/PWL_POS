@@ -85,7 +85,7 @@
     <script src="{{asset('adminlte/AdminLTE-3.2.0/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
     <script src="{{asset('adminlte/AdminLTE-3.2.0/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
     <!-- AdminLTE App -->
-    <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
+    <script src="{{asset('adminlte/AdminLTE-3.2.0/dist/js/adminlte.min.js')}}"></script>
     <script>
         $.ajaxSetup({
             headers: {

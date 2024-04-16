@@ -16,7 +16,6 @@
         @if (session('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
-        
         {{-- // Praktikum 4, Jobsheet 7, No 2 --}}
         <div class="row">
             <div class="col-ms-12">
