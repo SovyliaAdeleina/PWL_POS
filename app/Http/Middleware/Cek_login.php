@@ -14,9 +14,23 @@ class Cek_login
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
+    // JS 9 Praktikum No 3
     public function handle(Request $request, Closure $next, $roles): Response
     {
-        
-        return $next($request);
+        // check if already logged in. if not, redirect to login page
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+
+        // simpan data user pada variabel user
+        $user = Auth::user();
+
+        // jika user memiliki level sesuai pada kolom lanjutkan request
+        if($user->level_id == $roles) {
+            return $next($request);
+        }
+
+        // jika tidak memiliki akses kembalikan ke halaman login
+        return redirect('login')->with('error', 'Maaf anda tidak memiliki akses');
     }
 }
