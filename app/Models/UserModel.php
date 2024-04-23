@@ -6,8 +6,10 @@ use App\Models\LevelModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
-class UserModel extends Model
+class UserModel extends User
 {
     use HasFactory;
     // pengentian Jobsheet 3 Praktikum 6 
