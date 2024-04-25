@@ -24,6 +24,8 @@ class UserModel extends Authenticatable implements JWTSubject
     protected $table = 'm_user';
     protected $primaryKey = 'user_id';
 
+    protected $fillable = ['level_id', 'username', 'nama', 'password'];
+
     // use HasFactory;
     // // pengerjaan Jobsheet 3 Praktikum 6 
     // protected $table = 'm_user';            // mendefinisikan tabel yang digunakan
