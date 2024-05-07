@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class UserModel extends Authenticatable implements JWTSubject
@@ -24,7 +25,29 @@ class UserModel extends Authenticatable implements JWTSubject
     protected $table = 'm_user';
     protected $primaryKey = 'user_id';
 
-    protected $fillable = ['level_id', 'username', 'nama', 'password'];
+    // Jobsheet 12 - Praktikum 1 No 5
+    protected $fillable = [
+        'username', 
+        'nama', 
+        'password',
+        'level_id',
+        'image' // tambahan
+    ];
+
+    public function level()
+    {
+        return $this->belongsTo(LevelModel::class, 'level_id', 'level_id');
+    }
+    protected function image(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($image) => url('/storage/posts/'. $image),
+        );
+    }
+}
+
+
+
 
     // use HasFactory;
     // // pengerjaan Jobsheet 3 Praktikum 6 
@@ -45,4 +68,3 @@ class UserModel extends Authenticatable implements JWTSubject
     // {
     //     return $this->belongsTo(LevelModel::class, 'level_id', 'level_id');
     // }
-}
